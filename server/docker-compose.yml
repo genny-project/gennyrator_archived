@@ -1,0 +1,9 @@
+mongo:
+  image: mongo:3.0-wheezy
+  ports:
+    - "27017:27017"
+
+redis:
+  image: redis:5.0-rc3
+  ports:
+    - "6379:6379"

@@ -1,0 +1,44 @@
+{
+  "name": "gennyrator-api",
+  "version": "1.0.0",
+  "description": "The API for Gennyrator",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist/ && babel ./src --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "dev": "nodemon --ignore dist/ --exec babel-node -- ./src/index.js",
+    "eslint": "eslint ."
+  },
+  "author": "Matt Hayward",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-flowtype": "^2.46.1",
+    "nodemon": "^1.17.2",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-request-logger": "0.0.3",
+    "fuse.js": "^3.2.1",
+    "handlebars": "^4.0.11",
+    "inline-css": "^2.4.0",
+    "isemail": "^3.1.1",
+    "jsonwebtoken": "^8.2.0",
+    "kue": "^0.11.6",
+    "mongoose": "^5.0.12",
+    "randomstring": "^1.1.5",
+    "winston": "^3.0.0-rc0"
+  }
+}
