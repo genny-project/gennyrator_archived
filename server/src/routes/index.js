@@ -1,15 +1,16 @@
 /* Import dependencies */
 import API from 'lib/api';
 import { UserType } from 'schemas';
+import { User, Project } from 'models';
 import {
   getApplicationInformation,
   getApplicationHealth,
-  findUsers,
   getTestError,
-  getUserByID,
   getMyInformation,
   registerUser,
   authUser,
+  findObjects,
+  findObjectByID,
 } from 'controllers';
 
 class Routes {
@@ -19,10 +20,14 @@ class Routes {
     API.registerRoute( 'get', '/health', getApplicationHealth );
     API.registerRoute( 'get', '/error/:code', getTestError );
     API.registerAuthenticatedRoute( UserType.USER, 'get', '/me', getMyInformation );
-    API.registerAuthenticatedRoute( UserType.ADMIN, 'get', '/users', findUsers );
-    API.registerAuthenticatedRoute( UserType.ADMIN, 'get', '/users/:id', getUserByID );
+    API.registerAuthenticatedRoute( UserType.ADMIN, 'get', '/users', findObjects( User ));
+    API.registerAuthenticatedRoute( UserType.ADMIN, 'get', '/users/:id', findObjectByID( User ));
     API.registerRoute( 'post', '/auth/register', registerUser );
     API.registerRoute( 'post', '/auth/login', authUser );
+
+    /* Project routes */
+    API.registerAuthenticatedRoute( UserType.USER, 'get', '/projects', findObjects( Project ));
+    API.registerAuthenticatedRoute( UserType.USER, 'get', '/projects/:id', findObjectByID( Project ));
 
     /* Enable the error handler */
     API.enableErrorHandler();

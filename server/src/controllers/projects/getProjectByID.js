@@ -1,8 +1,8 @@
 /* Include dependencies */
-import { UserFactory } from 'factories';
+import { ProjectFactory } from 'factories';
 import { requireFields } from 'utils/validation';
 
-/* Returns the user with the specified ID */
+/* Returns the Project with the specified ID */
 export default async ( req, res ) => {
   /* Get the path parameters */
   let { id } = req.params;
@@ -10,9 +10,9 @@ export default async ( req, res ) => {
   /* If the field is missing throw an error */
   requireFields({ id });
 
-  /* Get the user */
-  const user = await UserFactory.getUserByID( id );
+  /* Get the project */
+  const Project = await ProjectFactory.getByID( id );
 
-  /* Returns the user */
-  res.json( user );
+  /* Returns the project */
+  res.json( Project );
 };

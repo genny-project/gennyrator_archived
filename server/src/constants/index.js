@@ -3,6 +3,7 @@ export const DEFAULT_ERROR_MESSAGE = 'An unknown error has occured. Please conta
 
 /* Define pagination constants */
 export const PAGINATION_MAX_USERS_LIMIT = 50;
+export const PAGINATION_MAX_PROJECTS_LIMIT = 50;
 
 /* Define user errors */
 export const USER_NOT_FOUND_ERROR = 'Whoops! Looks like we couldn\'t find you. Double check your email address and try again.';
@@ -18,3 +19,9 @@ export const ACCESS_DENIED_ERROR = 'You are not authorized to perform this actio
 /* Define registration errors */
 export const YOU_ARE_ALREADY_REGISTERED_ERROR = 'You are already registered on the platform. Need to create another account? Please logout first.';
 export const USER_EMAIL_CONFLICT_ERROR = 'A user with the email address specified already exists.';
+
+/* Define project errors */
+export const PROJECT_NOT_FOUND_ERROR = 'Whoops! It looks like we couldn\'t find this project.';
+
+/* Define object errors */
+export const OBJECT_NOT_FOUND_ERROR = 'Whoops! It looks like we couldn\'t find this object';
